@@ -21,22 +21,31 @@ sudo systemctl reload nginx
 ```
 
 --verify nginx config
-```
+```bash
 sudo nginx -t
+    should_see='
+    nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
+    nginx: configuration file /etc/nginx/nginx.conf test is successful
+    '
 ```
 
 
 #Check Hello World in user's browser (via IP VPS)
 
-#install npm + nodejs by using nodesource (https://github.com/nodesource/distributions).
+#Install npm + nodejs by using nodesource (https://github.com/nodesource/distributions).
 Recommend using ver 12 (now) - stable version (LTS).
 
 --install curl
-sudo apt-get install curl
+```
+sudo apt-get install -y curl
+```
 
 --install npm + nodejs 
+```
 curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
 sudo apt-get install -y nodejs
+```
+
 
 #Deploy
 --clone project into /home/lmht/lienminhhuyenthoai (for better management)
@@ -59,16 +68,11 @@ to this:
   --> root /home/lmht/lienminhhuyenthoai 
 
 --Check configure file to make sure no syntax errors:
+```
 sudo nginx -t
+```
 
 --Restart nginx: 
+```
 sudo systemctl restart nginx
-
-
-
-
-
-
-
-
-
+```
