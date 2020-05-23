@@ -39,7 +39,7 @@ curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
 sudo apt-get install -y nodejs
 
 #Deploy
---clone project into /var/www/{your_project} (for better management)
+--clone project into /home/lmht/lienminhhuyenthoai (for better management)
 
 --tell Nginx to serve the New Html File (in build folder) by modifying the default nginx config file:
 ```
@@ -47,7 +47,16 @@ sudo vim /etc/nginx/sites-available/default
 ```
 
 Change this line to the new directory:
-> root /var/www/example.com/html; --> /var/www/{your_project}
+
+server {
+	listen 80 default_server;
+	listen [::]:80 default_server;
+        root /var/www/example.com/html; <-- change this line
+...}
+
+to this: 
+
+  --> root /home/lmht/lienminhhuyenthoai 
 
 --Check configure file to make sure no syntax errors:
 sudo nginx -t
