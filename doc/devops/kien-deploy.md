@@ -50,6 +50,12 @@ sudo apt-get install -y nodejs
 #Deploy
 --clone project into /home/lmht/lienminhhuyenthoai (for better management)
 
+--install all packages in project and build production folder (/build)
+```
+sudo npm install
+sudo npm run build
+```
+
 --tell Nginx to serve the New Html File (in build folder) by modifying the default nginx config file:
 ```
 sudo vim /etc/nginx/sites-available/default
