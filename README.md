@@ -27,7 +27,7 @@ cd /path/to/git/clone/lienminhhuyenthoai
     docker build -t lienminhhuyenthoai:DEV   .
     #            docker image name     env   source_folder
 
-    docker run --name kc              -d                  kien_image
+    docker run --name lmht            -d                  lienminhhuyenthoai:DEV
     #          container name as kc   run as daemon
     #                                 run as background   docker image name
 
