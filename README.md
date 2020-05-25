@@ -20,6 +20,19 @@ npm install
 npm start  # should see web app opened in your local browser as [snapshot](./doc/run-localhost-200523.png)
 ```
 
+
+# install & run with docker
+```bash
+cd /path/to/git/clone/lienminhhuyenthoai
+    docker build -t lienminhhuyenthoai:DEV   .
+    #            docker image name     env   source_folder
+
+    docker run --name lmht      -d              -it                           -p 20526:3000   lienminhhuyenthoai:DEV               
+    #          container name   run as daemon   react-scripts requires this   map port        docker image name
+    #                                           ref. https://mherman.org/blog/dockerizing-a-react-app/
+```
+
+
 # task note
 ```
 Create a blank reactjs web app so that we can make a docker image from it on dockerhub and deploy it to the cloud.
