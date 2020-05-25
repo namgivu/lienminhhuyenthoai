@@ -41,3 +41,5 @@ Create a blank reactjs web app so that we can make a docker image from it on doc
 
 Should we reove package.lock?
 # todo Kien
+
+Make package.json smallest to run plain helloworld
