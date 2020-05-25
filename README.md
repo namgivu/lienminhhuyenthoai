@@ -27,9 +27,9 @@ cd /path/to/git/clone/lienminhhuyenthoai
     docker build -t lienminhhuyenthoai:DEV   .
     #            docker image name     env   source_folder
 
-    docker run --name lmht      -it                           -p 20526:3000   lienminhhuyenthoai:DEV               
-    #          container name   react-scripts requires this   map port        docker image name
-    #                           ref. https://mherman.org/blog/dockerizing-a-react-app/
+    docker run --name lmht      -d              -it                           -p 20526:3000   lienminhhuyenthoai:DEV               
+    #          container name   run as daemon   react-scripts requires this   map port        docker image name
+    #                                           ref. https://mherman.org/blog/dockerizing-a-react-app/
 ```
 
 
