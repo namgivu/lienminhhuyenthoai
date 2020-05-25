@@ -2,5 +2,12 @@
 FROM node:13.12.0-alpine
 #                 debian os at version=alpine
 
+# set working directory
+WORKDIR /app
+
+# copy :source_folder to :WORKDIR
+COPY   .                 .
+
+
 CMD tail -F `mktemp`
 # tail to make the keep running
