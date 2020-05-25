@@ -7,8 +7,8 @@ file                         image                        os instance
 ```bash 
 cd /path/to/git/clone/lienminhhuyenthoai/doc/docker-newbie
 
-    docker build -t kien_image      .
-    #            doker image name   source_folder
+    docker build -t kien_image       .
+    #            docker image name   source_folder
 
     docker run --name kc              -d                  kien_image
     #          container name as kc   run as daemon

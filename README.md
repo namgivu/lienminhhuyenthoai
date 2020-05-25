@@ -20,6 +20,20 @@ npm install
 npm start  # should see web app opened in your local browser as [snapshot](./doc/run-localhost-200523.png)
 ```
 
+
+# install & run with docker
+```bash
+cd /path/to/git/clone/lienminhhuyenthoai
+    docker build -t lienminhhuyenthoai:DEV   .
+    #            docker image name     env   source_folder
+
+    docker run --name kc              -d                  kien_image
+    #          container name as kc   run as daemon
+    #                                 run as background   docker image name
+
+```
+
+
 # task note
 ```
 Create a blank reactjs web app so that we can make a docker image from it on dockerhub and deploy it to the cloud.
