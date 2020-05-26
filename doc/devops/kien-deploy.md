@@ -1,5 +1,10 @@
 ##Deploy React App to VPS
 
+#create demo react app in local
+```
+npx create-react-app lienminhhuyenthoai
+```
+
 #Install nginx
 --Update local packages 
 ```
@@ -52,8 +57,8 @@ sudo apt-get install -y nodejs
 
 --install all packages in project and build production folder (/build)
 ```
-sudo npm install
-sudo npm run build
+sudo yarn install
+sudo yarn build
 ```
 
 --tell Nginx to serve the New Html File (in build folder) by modifying the default nginx config file:
