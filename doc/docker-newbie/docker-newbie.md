@@ -1,10 +1,9 @@
-Dockerfile --docker build--> docker image --docker run--> docker container
-file                         image                        os instance
-                                                          virtual machine
+# basic flow
+Dockerfile   --docker build-->   docker image   --docker run-->   docker container
+file                             image                            os instance aka virtual machine
 
-#TODO Kien collect slack chat guide to this doc
---General command:
 
+# command note
 - List all running containers
 ```
 docker ps 
@@ -20,7 +19,8 @@ docker ps -a
 docker image ls 
 ```
 
-- Remove  all dockers' resouces (container, network, volume)
+
+- Remove  all dockers' resources (container, network, volume)  
 ```
 docker container prune
 ```

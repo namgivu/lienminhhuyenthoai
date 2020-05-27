@@ -8,6 +8,5 @@ WORKDIR /app
 # copy :source_folder to :WORKDIR
 COPY   .                 .
 
-
+# tail to keep the container running
 CMD tail -F `mktemp`
-# tail to make the keep running
