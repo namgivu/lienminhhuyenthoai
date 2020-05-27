@@ -3,6 +3,27 @@ file                         image                        os instance
                                                           virtual machine
 
 #TODO Kien collect slack chat guide to this doc
+--General command:
+
+- List all running containers
+```
+docker ps 
+```
+
+- List all stopped & running containers
+```
+docker ps -a
+```
+
+- List all images:
+```
+docker image ls 
+```
+
+- Remove  all dockers' resouces (container, network, volume)
+```
+docker container prune
+```
 
 ```bash 
 cd /path/to/git/clone/lienminhhuyenthoai/doc/docker-newbie
