@@ -22,7 +22,7 @@ docker image ls
 
 - Remove  all dockers' resources (container, network, volume)  
 ```
-docker container prune
+docker container prune  #TODO Kien thisi only prune container, not for network and volume?
 ```
 
 ```bash 
