@@ -10,9 +10,10 @@ docker rm -f     $CONTAINER
 echo
 cd $AH
     set -x  # print executed command ON
-        docker run   -p $PORT:3000   --name  $CONTAINER     -d              $IMAGE_NAME
-        #            port mapping    container name as kc   run as daemon
-        #                                                   run as background
+
+        docker run   -p $PORT:3000   --name  $CONTAINER     -d                  -it              $IMAGE_NAME
+        #            port mapping    container name as kc   run as daemon       CRITICAL NOTE:
+        #                                                   run as background   must have this -it param
     set +x  # print executed command OFF
 cd - 1>/dev/null
 
