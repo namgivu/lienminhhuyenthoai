@@ -10,13 +10,13 @@ ENV PATH /app/node_modules/.bin:$PATH
 RUN echo 200528_x0
 
 # install app dependencies
-COPY package.json      .
-COPY package-lock.json .
+COPY package.json .
+COPY yarn.lock    .
 
-RUN npm install --silent
+RUN yarn install --silent
 
 # add app
 COPY . .
 
 # start app
-CMD npm start
+CMD yarn start
