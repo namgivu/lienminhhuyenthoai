@@ -19,10 +19,18 @@ docker ps -a
 docker image ls 
 ```
 
-
-- Remove  all dockers' resources (container, network, volume)  
+- Stop all containers
 ```
-docker container prune  #TODO Kien thisi only prune container, not for network and volume?
+docker container stop $(docker container ls -aq)
+```
+- Remove all containers
+```
+docker container rm $(docker container ls -aq)
+```
+
+- Remove  all stopped containers
+```
+docker container prune
 ```
 
 ```bash 
