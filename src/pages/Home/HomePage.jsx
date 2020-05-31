@@ -8,11 +8,13 @@ import Footer from "../../compoments/Footer/Footer";
 const Home = () => {
   return (
     <React.Fragment>
-      <div className="page-wrapper">
-        <MainNavigation />
-        <HomeBody />
+      <div className="page-wrapper d-flex h-100 p-3 mx-auto flex-column debug">
+        <div className="content">
+          <MainNavigation />
+          <HomeBody />
+        </div>
+        <Footer />
       </div>
-      <Footer />
     </React.Fragment>
   );
 };
