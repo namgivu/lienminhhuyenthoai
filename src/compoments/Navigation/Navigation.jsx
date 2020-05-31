@@ -1,7 +1,7 @@
 import React from "react";
 
 const Navigation = (props) => {
-  return <header>{props.children}</header>;
+  return <header className={props.className}>{props.children}</header>;
 };
 
 export default Navigation;

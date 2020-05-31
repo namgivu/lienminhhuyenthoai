@@ -9,10 +9,8 @@ const Home = () => {
   return (
     <React.Fragment>
       <div className="page-wrapper d-flex h-100 p-3 mx-auto flex-column debug">
-        <div className="content">
-          <MainNavigation />
-          <HomeBody />
-        </div>
+        <MainNavigation />
+        <HomeBody />
         <Footer />
       </div>
     </React.Fragment>

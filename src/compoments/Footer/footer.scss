@@ -1,0 +1,7 @@
+@import "./variable";
+
+.home {
+  &__footer {
+    color: $TextColorFooter;
+  }
+}

@@ -3,8 +3,20 @@
   padding: 0;
   margin: 0;
   text-rendering: optimizeLegibility;
-  background-color: $HomePageBackGround;
+  box-sizing: border-box;
   color: $HomePageTextColor;
+}
+
+html,
+body {
+  height: 100%;
+  background-color: $HomePageBackGround;
+}
+
+body {
+  display: flex;
+  text-align: center !important;
+  justify-content: center;
 }
 
 .debug {
