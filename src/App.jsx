@@ -1,14 +1,14 @@
 import React from "react";
 import { BrowserRouter, Route, Redirect, Switch } from "react-router-dom";
 
-import Home from "./pages/Home/Home";
+import HomePage from "./pages/Home/HomePage";
 
 const App = () => {
   let routes;
 
   routes = (
     <Switch>
-      <Route path="/" exact component={Home} />
+      <Route path="/" exact component={HomePage} />
       <Redirect to="/" />
     </Switch>
   );
