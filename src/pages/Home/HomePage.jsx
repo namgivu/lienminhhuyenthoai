@@ -8,7 +8,7 @@ import Footer from "../../compoments/Footer/Footer";
 const Home = () => {
   return (
     <React.Fragment>
-      <div className="page-wrapper d-flex h-100 p-3 mx-auto flex-column debug">
+      <div className="page-wrapper d-flex h-100 p-3 mx-auto flex-column">
         <MainNavigation />
         <HomeBody />
         <Footer />

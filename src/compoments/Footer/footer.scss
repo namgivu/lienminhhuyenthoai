@@ -2,6 +2,9 @@
 
 .home {
   &__footer {
-    color: $TextColorFooter;
+    color: $FooterText;
+    a {
+      color: $FooterTextLink;
+    }
   }
 }
