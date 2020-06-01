@@ -1,0 +1,10 @@
+@import "./variable";
+
+.home {
+  &__footer {
+    color: $FooterText;
+    a {
+      color: $FooterTextLink;
+    }
+  }
+}
