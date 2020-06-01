@@ -36,9 +36,10 @@ cd /path/to/git/clone/lienminhhuyenthoai
 # task note
 ```
 Create a blank reactjs web app so that we can make a docker image from it on dockerhub and deploy it to the cloud.
-# done                                        todo                                         todo             
+# done                                        todo                                         todo           
 
 Should we reove package.lock?
-# todo Kien
+removed
 
 Make package.json smallest to run plain helloworld
+--done
