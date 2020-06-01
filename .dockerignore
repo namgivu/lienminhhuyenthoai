@@ -1,5 +1,4 @@
-node_modules
-build
-.dockerignore
-Dockerfile
-Dockerfile.prod
+node_modules/
+.git/
+
+.idea/
