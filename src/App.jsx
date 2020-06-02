@@ -16,6 +16,7 @@ const App = () => {
         <Features />
       </Route>
       <Redirect to="/"></Redirect>
+      {/* Redirect all unknown route to "/" */}
     </Switch>
   );
 
