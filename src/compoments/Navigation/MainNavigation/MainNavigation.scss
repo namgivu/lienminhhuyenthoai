@@ -1,10 +1,8 @@
 .nav-brand {
-  float: left;
   font-size: 1.75rem;
 }
 
 .nav-menu {
-  float: right;
   display: flex;
   .nav-link {
     margin-left: 1rem;
@@ -17,5 +15,14 @@
   .nav-link.active {
     color: #fff;
     border-bottom-color: #fff;
+  }
+}
+
+@media (min-width: 768px) {
+  .nav-brand {
+    float: left;
+  }
+  .nav-menu {
+    float: right;
   }
 }
