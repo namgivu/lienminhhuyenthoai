@@ -1,9 +1,9 @@
 import React from "react";
 
 import "./home.scss";
-import MainNavigation from "../../compoments/Navigation/MainNavigation/MainNavigation";
-import HomeBody from "./HomeContent/HomeBody";
-import Footer from "../../compoments/Footer/Footer";
+import MainNavigation from "compoments/Navigation/MainNavigation/MainNavigation";
+import HomeBody from "pages/Home/HomeContent/HomeBody";
+import Footer from "compoments/Footer/Footer";
 
 const Home = () => {
   return (

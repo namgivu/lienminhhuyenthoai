@@ -2,7 +2,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 
 import "./MainNavigation.scss";
-import Navigation from "../Navigation";
+import Navigation from "compoments/Navigation/Navigation";
 
 const MainNavigation = () => {
   return (
