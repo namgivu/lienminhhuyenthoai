@@ -24,3 +24,4 @@ docker ps | grep -E " $CONTAINER|$PORT|$IMAGE_NAME|IMAGE" --color=always
 echo
 sleep 2  # wait a while to list the container
 docker logs $CONTAINER
+

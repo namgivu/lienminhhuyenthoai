@@ -1,0 +1,30 @@
+name: MasterCI
+on:
+  push:
+    branches:
+      - deploy/DEV
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+
+      - name: executing remote command
+        uses: appleboy/ssh-action@master
+        with:
+          # ssh connect
+          username : lmht
+          host     : ${{ secrets.REMOTE_HOST }}
+          key      : ${{ secrets.REMOTE_SSH_KEY }}
+          # script to run
+          script: ./bin/deploy/buildrun-DEV.sh
+
+      - uses: 8398a7/action-slack@v3
+        with:
+          status: ${{ job.status }}
+          fields: repo,author,commit,message,action,eventName,ref,workflow
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # how to get value for this SLACK_WEBHOOK_URL ref. https://slack.com/intl/en-vn/help/articles/115005265063-Incoming-Webhooks-for-Slack
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+        if: always()
