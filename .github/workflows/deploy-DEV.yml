@@ -1,4 +1,4 @@
-name: MasterCI
+name: MasterCI  #TODO Trang https://namgivu.slack.com/archives/DMSGRNLHK/p1591149286034800?thread_ts=1591149264.034700&cid=DMSGRNLHK
 on:
   push:
     branches:
