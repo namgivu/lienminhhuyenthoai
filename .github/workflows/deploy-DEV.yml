@@ -13,7 +13,7 @@ jobs:
         uses: appleboy/ssh-action@master
         with:
           # ssh connect
-          username : ${{ secrets.5 }}
+          username : ${{ secrets.REMOTE_USER }}
           host     : ${{ secrets.REMOTE_HOST }}
           key      : ${{ secrets.REMOTE_SSH_KEY }}
           # script to run
