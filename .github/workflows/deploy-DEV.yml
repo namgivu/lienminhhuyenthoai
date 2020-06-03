@@ -36,12 +36,16 @@ jobs:
             chmod +x ${{ env.REMOTE_DIR }}/bin/deploy/buildrun-DEV.sh
             ${{ env.REMOTE_DIR }}/bin/deploy/buildrun-DEV.sh
 
-      - uses: 8398a7/action-slack@v3
+      - name: notify actionstatus to slack channel :deployment  # ref. https://github.com/marketplace/actions/action-slack
+        uses: 8398a7/action-slack@v3
         with:
           status: ${{ job.status }}
-          fields: repo,author,commit,message,action,eventName,ref,workflow
+          fields:   repo, ref,     commit,      message,     author, action
+          # fields: repo, ref,     message,      commit,     author, action,          eventName, workflow
+          #               branch   commit text   commit id           build log link   push       :this_filename
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          # how to get value for this SLACK_WEBHOOK_URL ref. https://slack.com/intl/en-vn/help/articles/115005265063-Incoming-Webhooks-for-Slack
-          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
-        if: always()
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # required to have field :message ref. https://action-slack.netlify.app/with#fields
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}  # how to get value for this SLACK_INCOMING_WEBHOOK
+                                                               # ref. 360f slack https://api.slack.com/apps/A013M0APFFZ/incoming-webhooks?success=1
+                                                               # ref. slack help https://slack.com/intl/en-vn/help/articles/115005265063-Incoming-Webhooks-for-Slack
+        if: always()  # pick up events even if the job fails or is canceled.
