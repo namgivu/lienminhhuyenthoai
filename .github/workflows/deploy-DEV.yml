@@ -8,6 +8,21 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@master
+      - name: set envvar :REMOTE_DIR
+        # set env
+        run: |
+          echo "::set-env name=REMOTE_DIR::/tmp/github-action.test.d"
+
+      - name: copy file via scp
+        uses: appleboy/scp-action@master
+        with:
+          # ssh connect
+          username: lmht
+          host: ${{ secrets.REMOTE_HOST }}
+          key: ${{ secrets.REMOTE_SSH_KEY }}
+          # file to copy
+          source: ./bin/deploy/buildrun-DEV.sh
+          target: ${{ env.REMOTE_DIR }}
 
       - name: executing remote command
         uses: appleboy/ssh-action@master
@@ -17,7 +32,9 @@ jobs:
           host     : ${{ secrets.REMOTE_HOST }}
           key      : ${{ secrets.REMOTE_SSH_KEY }}
           # script to run
-          script: ./bin/deploy/buildrun-DEV.sh
+          script: |
+            chmod +x ${{ env.REMOTE_DIR }}/bin/deploy/buildrun-DEV.sh
+            ${{ env.REMOTE_DIR }}/bin/deploy/buildrun-DEV.sh
 
       - uses: 8398a7/action-slack@v3
         with:
