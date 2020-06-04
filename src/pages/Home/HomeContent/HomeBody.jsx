@@ -3,7 +3,7 @@ import Axios from "axios";
 
 const HomeBody = () => {
   const URL = "http://localhost:5000/health";
-  const [responeData, setResponeData] = useState("");
+  const [responeData, setResponeData] = useState("");  /*TODO Kien typo respond*/
 
   useEffect(() => {
     const getDataFromHealthAPI = async () => {
