@@ -2,14 +2,16 @@ import React, { useEffect, useState } from "react";
 import Axios from "axios";
 
 const HomeBody = () => {
-  const URL = "http://localhost:5000/health";
+  const HEALTH_URL = "http://localhost:5000/health";
+
   const [responeData, setResponeData] = useState("");  /*TODO Kien typo respond*/
+  //     stateValue   setState
 
   useEffect(() => {
     const getDataFromHealthAPI = async () => {
       try {
-        let tempdata = await Axios.get(URL);
-        setResponeData(tempdata.data.message);
+        let r = await Axios.get(HEALTH_URL);
+        setResponeData(r.data.message);
       } catch (error) {
         console.log(error);
       }
