@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import Axios from "axios";
 
 const HomeBody = () => {
-  const HEALTH_URL = "http://localhost:5000/health";
+  const HEALTH_URL = "http://localhost:5000/health";  /*TODO Kien make this loaded via .env*/
 
   const [responeData, setResponeData] = useState("");  /*TODO Kien typo respond*/
   //     stateValue   setState
