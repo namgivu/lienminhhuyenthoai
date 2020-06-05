@@ -1,17 +1,19 @@
 import React, { useEffect, useState } from "react";
-import Axios from "axios";
+import api from "compoments/Axios/api";
 
 const HomeBody = () => {
-  const HEALTH_URL =
-    "http://localhost:5000/health"; /*TODO Kien make this loaded via .env*/
+  // process.env.HEALTH_URL; /*TODO Kien make this loaded via .env*/
 
-  const [respondData, setRespondData] = useState(""); /*TODO Kien typo respond*/
+  // --> create an axios instance to store the BASE_URL in .env file.
+  // Then : axios.get("/health") = axios.get("http://localhost:5000/health")
+
+  const [respondData, setRespondData] = useState("");
   //     stateValue   setState
 
   useEffect(() => {
     const getDataFromHealthAPI = async () => {
       try {
-        let r = await Axios.get(HEALTH_URL);
+        let r = await api.get("/health");
         setRespondData(r.data.message);
       } catch (error) {
         console.log(error);
